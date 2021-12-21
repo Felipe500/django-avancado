@@ -18,7 +18,7 @@ from django.urls import reverse_lazy
 @login_required
 def persons_list(request):
 
-    persons = Person.objects.using('postgree').all()
+    persons = Person.objects.using('default').all()
     footer_message = "Desenvolvido com Django 3.2"
     return render(request, 'person.html', {'persons': persons, 'footer_message':footer_message})
 
@@ -35,7 +35,7 @@ def persons_new(request):
 
     if form.is_valid():
         form = form.save(commit=False)
-        form.save(using='postgree')
+        form.save(using='default')
         return redirect('person_list')
     return render(request, 'person_form.html', {'form': form, 'footer_message':footer_message})
 
@@ -43,12 +43,12 @@ def persons_new(request):
 @login_required
 def persons_update(request, id):
     #person = get_object_or_404(Person, pk=id)
-    person = Person.objects.using('postgree').get(id=id)
+    person = Person.objects.using('default').get(id=id)
     form = PersonForm(request.POST or None, request.FILES or None, instance=person)
 
     if form.is_valid():
         form = form.save(commit=False)
-        form.save(using='postgree')
+        form.save(using='default')
 
         return redirect('person_list')
 
@@ -60,7 +60,7 @@ def persons_delete(request, id):
     person = Person.objects.using('postgree').get(id=id)
 
     if request.method == 'POST':
-        person.delete(using='postgree')
+        person.delete(using='default')
         return redirect('person_list')
 
     return render(request, 'person_delete_confirm.html', {'person': person})
