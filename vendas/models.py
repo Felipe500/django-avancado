@@ -24,7 +24,7 @@ class Venda(models.Model):
         )
 
     def calcular_total(self):
-        tot = self.itemvenda_set.all().aggregate(
+        tot = self.itemsvenda_set.all().aggregate(
             tot_ped=Sum((F('quantidade') * F('produto__preco')) - F('desconto'), output_field=FloatField())
         )['tot_ped'] or 0
 
@@ -44,7 +44,8 @@ class ItemsVenda(models.Model):
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
     quantidade = models.FloatField()
     desconto = models.DecimalField(max_digits=5, decimal_places=2)
-
+    class Meta:
+        verbose_name_plural = "Itens do pedido"
     def __str__(self):
         return self.venda.numero + ' - ' + self.produto.descricao
 
