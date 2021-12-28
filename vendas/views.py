@@ -77,7 +77,9 @@ class NovoItemPedido(View):
 class ListaVendas(View):
     def get(self, request):
         vendas = Venda.objects.all()
-        return render(request, 'vendas/lista-vendas.html', {'vendas': vendas})
+        count_vendas = vendas.count()
+        #count
+        return render(request, 'vendas/lista-vendas.html', {'vendas': vendas, 'count_vendas':count_vendas})
 
 class EditPedido(View):
     def get(self, request, venda):
