@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Administracao {% endblock %}
+
+{% block main %}
+
+    <div class="row">
+        <div class="col">
+
+        </div>
+
+        <div class="col-6">
+            <h3>Listagem de produtos</h3>
+            <ul class="list-group">
+                {% for produto in produtos %}
+                    <li class="list-group-item">
+                        <a href="{% url 'produto_update' produto.id %}">{{ produto.descricao }}</a>
+                        <a href="{% url 'produto_update' produto.id %}">--> &nbsp;{{ produto.preco }}</a>
+                        <a href="" class="trash-item">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                    </li>
+
+                {% endfor %}
+            </ul>
+
+            <br>
+            <a href="" class="btn btn-primary"> Novo Produto</a>
+        </div>
+
+        <div class="col">
+            {% if user.is_authenticated %}
+                <p>Ola {{user.username }}
+                    <a href="{% url 'logout' %}">
+                        <span class="badge badge-dark">Sair</span>
+                    </a>
+                </p>
+
+            {% endif %}
+        </div>
+    </div>
+
+
+{% endblock %}

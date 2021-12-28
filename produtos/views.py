@@ -1,3 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from .models import Produto
+from .forms import ProdutoForm
 
-# Create your views here.
+
+
+@login_required
+def produtos_list(request):
+    produtos = Produto.objects.all()
+    return render(request, 'produtos/produtos_list.html', {'produtos': produtos})
+
+
+def Produto_update(request, id):
+    produto_id = get_object_or_404(Produto, pk=id)
+    form = ProdutoForm(request.POST or None, request.FILES or None, instance=produto_id)
+
+    if form.is_valid():
+        form.save()
+        return redirect('produto_list')
+
+    return render(request, 'produtos/produto_update.html', {'form': form})
