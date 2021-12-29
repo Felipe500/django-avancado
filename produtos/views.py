@@ -7,7 +7,7 @@ from .forms import ProdutoForm
 
 @login_required
 def produtos_list(request):
-    produtos = Produto.objects.all()
+    produtos = Produto.objects.using('default').all()
     return render(request, 'produtos/produtos_list.html', {'produtos': produtos})
 
 

@@ -6,6 +6,15 @@ from clientes.models import Person
 from produtos.models import Produto
 from .managers import VendaManager
 
+
+class Categorias(models.TextChoices):
+
+    ABERTA = 'AB', 'Aberta'
+    FECHADA = 'FE', 'Fechada'
+    PROCESSANDO = 'PR', 'Processando'
+    DESCONHECIDO = 'DC', 'Desconhecido'
+
+
 class Venda(models.Model):
     numero = models.CharField(max_length=7)
     valor = models.DecimalField(max_digits=5, decimal_places=2,  null=True, blank=True, default=0)
@@ -13,6 +22,10 @@ class Venda(models.Model):
     impostos = models.DecimalField(max_digits=5, decimal_places=2, default=0)
     pessoa = models.ForeignKey(Person, null=True, blank=True, on_delete=models.PROTECT)
     nfe_emitida = models.BooleanField(default=False)
+    status = models.CharField(
+        choices=Categorias.choices,
+        default=Categorias.DESCONHECIDO,
+        max_length=7)
 
     objects = VendaManager()
 
@@ -46,6 +59,7 @@ class ItemsVenda(models.Model):
     desconto = models.DecimalField(max_digits=5, decimal_places=2)
     class Meta:
         verbose_name_plural = "Itens do pedido"
+        unique_together = [['venda', 'produto']]
     def __str__(self):
         return self.venda.numero + ' - ' + self.produto.descricao
 
