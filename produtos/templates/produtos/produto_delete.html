@@ -5,12 +5,14 @@
 
 {% block main %}
 
-    <h1>Tem certeza que deseja deletar {{ produto.descricao }} </h1>
+    <h1>Tem certeza que deseja deletar o produto '{{ produto.descricao }}' </h1>
 
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <button type="submit" class="btn btn-danger">Delete</button>
+        <button type="submit" class="btn btn-danger">Confirmar delete</button>
     </form>
+<br>
+<a class="btn btn-warning" href="{% url 'produto_list'  %}" role="button">Cancelar</a>
 
 
 
