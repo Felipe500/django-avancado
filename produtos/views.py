@@ -16,7 +16,8 @@ def Produto_update(request, id):
     form = ProdutoForm(request.POST or None, request.FILES or None, instance=produto_id)
 
     if form.is_valid():
-        form.save()
+        form = form.save(commit=False)
+        form.save(using='default')
         return redirect('produto_list')
 
     return render(request, 'produtos/produto_update.html', {'form': form})
@@ -27,7 +28,8 @@ def Produto_Novo(request):
     form = ProdutoForm(request.POST or None)
 
     if form.is_valid():
-        form.save()
+        form = form.save(commit=False)
+        form.save(using='default')
         return redirect('produto_list')
 
     return render(request, 'produtos/produto_novo.html', {'form': form})
@@ -38,6 +40,6 @@ def Produto_Delete(request, id):
 
     if request.method == 'POST':
         prod.delete(using='default')
-        return redirect('person_list')
+        return redirect('produto_list')
 
     return render(request, 'produtos/produto_delete.html', {'produto': prod})
