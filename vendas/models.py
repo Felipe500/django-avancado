@@ -15,6 +15,7 @@ class Categorias(models.TextChoices):
     DESCONHECIDO = 'DC', 'Desconhecido'
 
 
+
 class Venda(models.Model):
     numero = models.CharField(max_length=7)
     valor = models.DecimalField(max_digits=5, decimal_places=2,  null=True, blank=True, default=0)

@@ -78,7 +78,7 @@ class ListaVendas(View):
     def get(self, request):
         vendas = Venda.objects.all()
         count_vendas = vendas.count()
-        #count
+        #count 4
         return render(request, 'vendas/lista-vendas.html', {'vendas': vendas, 'count_vendas':count_vendas})
 
 class EditPedido(View):
