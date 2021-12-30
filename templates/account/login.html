@@ -1,7 +1,8 @@
 
-{% load static %}
+
 {% load i18n %}
 {% load account socialaccount %}
+{% load static %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
@@ -32,7 +33,9 @@
 					  {% if redirect_field_value %}
 					  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
 					  {% endif %}
-					  <a class="button secondaryAction" style="text-decoration: none;margin: 20px auto;justify-content: center;display: flex;" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+					  <a class="button secondaryAction" style="text-decoration: none;
+					  margin: 20px auto;justify-content: center;
+					  display: flex;" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
 					  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
 					<ul>
 					 {% if user.is_authenticated %}
@@ -40,7 +43,9 @@
 					<li><a href="{% url 'account_logout' %}">Sign Out</a></li>
 					{% else %}
 
-					<li style="list-style-type: none;" ><a style="text-decoration: none;justify-content: center;display: flex;margin: 25px auto;" href="{% url 'account_signup' %}">Criar uma conta</a></li>
+					<li style="list-style-type: none;" >
+						<a style="text-decoration: none;justify-content: center;display: flex;margin: 25px auto;"
+														   href="{% url 'account_signup' %}">Criar uma conta</a></li>
 					{% endif %}
 				  </ul>
 				</form>
@@ -59,7 +64,9 @@
 
 </div>
 
-{% include "socialaccount/snippets/login_extra.html" %}
+	<div id="extra_login">
+		{% include "socialaccount/snippets/login_extra.html" %}
+	</div>
 
 {% else %}
 <p>{% blocktrans %}If you have not created an account yet, then please
