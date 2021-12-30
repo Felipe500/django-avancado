@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views import View
-from .models import Venda, ItemsVenda
+from .models import Venda, ItemsVenda,  VendaStatus
 from django.db.models import  Sum, F, FloatField,Min, Max, Avg
 from .forms import ItemPedidoForm,ItemPedidoFormModelForm
 
@@ -84,13 +84,24 @@ class ListaVendas(View):
 class EditPedido(View):
     def get(self, request, venda):
         data = {}
+        STATUS = VendaStatus
 
         venda = Venda.objects.get(id=venda)
+
         data['form_item'] = ItemPedidoForm()
         data['numero'] = venda.numero
         data['desconto'] = float(venda.desconto)
         data['venda'] = venda
         data['itens'] = venda.itemsvenda_set.all()
+
+        if venda.status == 'DC':
+            data['status'] = STATUS.DESCONHECIDO.label
+        elif venda.status == 'PR':
+            data['status'] = STATUS.PROCESSANDO.label
+        elif venda.status == 'AB':
+            data['status'] = STATUS.ABERTA.label
+        elif venda.status == 'FE':
+            data['status'] = STATUS.FECHADA.label
 
         return render(
             request, 'vendas/novo-pedido.html', data)
@@ -122,6 +133,7 @@ class EditItemPedido(View):
     def get(self, request, item):
         item_pedido = ItemsVenda.objects.get(id=item)
         form = ItemPedidoFormModelForm(instance=item_pedido)
+
         return render(
             request, 'vendas/edit-itempedido.html', {'item_pedido': item_pedido, 'form':form})
 

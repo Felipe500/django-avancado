@@ -7,7 +7,7 @@ from produtos.models import Produto
 from .managers import VendaManager
 
 
-class Categorias(models.TextChoices):
+class VendaStatus(models.TextChoices):
 
     ABERTA = 'AB', 'Aberta'
     FECHADA = 'FE', 'Fechada'
@@ -24,8 +24,8 @@ class Venda(models.Model):
     pessoa = models.ForeignKey(Person, null=True, blank=True, on_delete=models.PROTECT)
     nfe_emitida = models.BooleanField(default=False)
     status = models.CharField(
-        choices=Categorias.choices,
-        default=Categorias.DESCONHECIDO,
+        choices=VendaStatus.choices,
+        default=VendaStatus.DESCONHECIDO,
         max_length=7)
 
     objects = VendaManager()

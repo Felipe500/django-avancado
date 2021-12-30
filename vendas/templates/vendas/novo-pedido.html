@@ -8,6 +8,30 @@
 
         <h1>Novo pedido</h1>
         <h3 style="font-color:gren">Total: {{ venda.valor }}</h3>
+
+        {% if venda.status == 'DC' %}
+             <div class="alert alert-primary" role="alert">
+                {{ status }}
+             </div>
+
+         {% elif venda.status == 'AB'  %}
+            <div class="alert alert-info" role="alert">
+                {{ status }}
+            </div>
+
+        {% elif venda.status == 'FC' %}
+            <div class="alert alert-success" role="alert">
+                 {{ status }}
+            </div>
+
+        {% elif venda.status == 'PR'  %}
+            <div class="alert alert-warning" role="alert" STYLE="backgroun-color:red">
+                 {{ status }}
+            </div>
+
+        {% endif %}
+
+
         <form method="POST" action="{% url 'novo-pedido' %}">
             {% csrf_token %}
             <h2>Cabecalho pedido numero: {{ venda.numero }}</h2>
