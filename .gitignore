@@ -5,4 +5,4 @@
 media
 .git
 venv
-.env
+*env
