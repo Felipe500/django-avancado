@@ -1,9 +1,14 @@
+import datetime
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views import View
 from .models import Venda, ItemsVenda,  VendaStatus
 from django.db.models import  Sum, F, FloatField,Min, Max, Avg
 from .forms import ItemPedidoForm,ItemPedidoFormModelForm
+import logging
+
+
+my_log = logging.getLogger('django')
 
 class DashboardView(View):
     def dispatch(self, request, *args, **kwargs):
@@ -38,6 +43,7 @@ class NovoPedido(View):
             venda.desconto = data['desconto']
             venda.numero = data['numero']
             venda.save()
+
         else:
             venda = Venda.objects.create(
                 numero=data['numero'], desconto=data['desconto'])
@@ -76,6 +82,14 @@ class NovoItemPedido(View):
 
 class ListaVendas(View):
     def get(self, request):
+        my_log.debug('Acessaram a listagem de vendas: ')
+        try:
+            1/0
+        except Exception as e:
+            time = datetime.datetime.now()
+            my_log.exception(time.strftime("%m/%d/%Y, %H:%M:%S") + '---' + str(request.user))
+
+
         vendas = Venda.objects.all()
         count_vendas = vendas.count()
         #count 4

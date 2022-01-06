@@ -17,8 +17,14 @@ from django.urls import reverse_lazy
 
 @login_required
 def persons_list(request):
+    nome = request.GET.get('nome', None)
+    sobrenome = request.GET.get('sobrenome', None)
 
-    persons = Person.objects.using('default').all()
+    if nome or sobrenome:
+        persons = Person.objects.using('default').filter(first_name__icontains=nome, last_name__icontains=sobrenome)
+    else:
+        persons = Person.objects.using('default').all()
+
     footer_message = "Desenvolvido com Django 3.2"
     return render(request, 'person.html', {'persons': persons, 'footer_message':footer_message})
 

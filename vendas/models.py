@@ -45,6 +45,7 @@ class Venda(models.Model):
         tot = tot - float(self.impostos) - float(self.desconto)
         self.valor = tot
         Venda.objects.filter(id=self.id).update(valor=tot)
+
         #tot = 0
         #for produto in self.produtos.all():
             #tot += produto.preco

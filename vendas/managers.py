@@ -7,6 +7,7 @@ class VendaManager(models.Manager):
         return self.all().aggregate(Avg('valor'))['valor__avg']
 
     def media_desconto(self):
+
         return self.all().aggregate(Avg('desconto'))['desconto__avg']
 
     def min(self):

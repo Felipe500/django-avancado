@@ -1,0 +1,10 @@
+01/05/2022, 20:35:46---AnonymousUser
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero
+01/05/2022, 21:27:12---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero
