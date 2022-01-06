@@ -20,7 +20,9 @@
                 <p>Ola {{ user.username }}</p>
                 <a href="{% url 'logout' %}">Sair</a>
             {% else %}
-                <a href="{% url 'login' %}" class="btn btn-info">Entrar</a>
+                <a href="{% url 'account_login' %}" class="btn btn-info">Entrar</a>
+            <hr>
+             <a href="{% url 'account_signup' %}" class="btn btn-info">Cadastrar</a>
             {% endif %}
         </div>
     </div>

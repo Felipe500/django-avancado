@@ -41,3 +41,36 @@ Not Found: /favicon.ico
 "GET /favicon.ico HTTP/1.1" 404 5089
 Not Found: /favicon.ico
 "GET /favicon.ico HTTP/1.1" 404 5089
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 5089
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 5089
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 5089
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 5089
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 5089
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 5089
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 5089
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 5089
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 5089
+Forbidden (CSRF token missing or incorrect.): /accounts/login/
+"POST /accounts/login/ HTTP/1.1" 403 2520
+Forbidden (CSRF token missing or incorrect.): /accounts/login/
+"POST /accounts/login/ HTTP/1.1" 403 2520
+Forbidden (CSRF token missing or incorrect.): /accounts/login/
+"POST /accounts/login/ HTTP/1.1" 403 2520
+Forbidden (CSRF token missing or incorrect.): /accounts/login/
+"POST /accounts/login/ HTTP/1.1" 403 2520
+Forbidden (CSRF token missing or incorrect.): /accounts/login/
+"POST /accounts/login/ HTTP/1.1" 403 2520
+Forbidden (CSRF token missing or incorrect.): /accounts/login/
+"POST /accounts/login/ HTTP/1.1" 403 2520
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
