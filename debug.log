@@ -387,3 +387,15 @@ Traceback (most recent call last):
     1/0
 ZeroDivisionError: division by zero
 Not Found: /favicon.ico
+Not Found: /vendas/accounts/login/
+"GET /vendas/accounts/login/?account_login=/vendas/ HTTP/1.1" 404 6637
+01/07/2022, 11:56:44---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 96, in get
+    1/0
+ZeroDivisionError: division by zero
+01/07/2022, 12:41:37---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 96, in get
+    1/0
+ZeroDivisionError: division by zero

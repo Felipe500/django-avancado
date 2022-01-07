@@ -84,8 +84,13 @@ class NovoItemPedido(View):
             request, 'vendas/novo-pedido.html', data)
 
 class ListaVendas( LoginRequiredMixin, View):
+    login_url = '/accounts/login/'
+    redirect_field_name = 'lista-vendas'
+
+
+
     def get(self, request):
-        LoginRequiredMixin.login_url = ''
+
         my_log.debug('Acessaram a listagem de vendas: ')
         try:
             1/0
