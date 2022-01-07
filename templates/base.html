@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="{% static 'stick-footer.css' %}">
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>{% block title %}{% endblock %}</title>
+    {% block extra_head %}
+
+    {% endblock %}
 </head>
 <body>
 
@@ -57,10 +60,9 @@
 
 
         <div class="jumbotron jumbotron-fluid">
-            <div class="container">
             {% block main %}
             {% endblock %}
-            </div>
+
         </div>
 
         {% block extra %}

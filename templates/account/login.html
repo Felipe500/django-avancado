@@ -1,4 +1,4 @@
-
+{% extends "base.html" %}
 {% load static %}
 {% load i18n %}
 {% load account socialaccount %}
@@ -9,17 +9,12 @@
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
 {% endblock %}
 
-{% block content %}
-
+{% block main %}
+<div class="body-s">
 	<div class="main">
 
 
 			<div class="signup">
-
-			</div>
-
-
-		<div class="login">
 				<form method="POST" action="{% url 'account_login' %}">
 					 {% csrf_token %}
 					<label for="chk" aria-hidden="true">Login</label>
@@ -47,30 +42,38 @@
 
 
 				  </ul>
+					{% get_providers as socialaccount_providers %}
+
+	{% if socialaccount_providers %}
+
+
+		<div class="socialaccount_ballot">
+			<li style="color:white">Logar com:</li>
+		  <ul class="socialaccount_providers">
+			{% include "socialaccount/snippets/provider_list.html" with process="login" %}
+		  </ul>
+
+		  <div class="login-or">{% trans 'or' %}</div>
+
+		</div>
+
+		{% include "socialaccount/snippets/login_extra.html" %}
+
+		{% else %}
+		<p>{% blocktrans %}If you have not created an account yet, then please
+		<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+		{% endif %}
+
+		</div>
+	</div>
 				</form>
-			{% get_providers as socialaccount_providers %}
-
-{% if socialaccount_providers %}
+			</div>
 
 
-<div class="socialaccount_ballot">
+	<div class="login">
 
-  <ul class="socialaccount_providers">
-    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-  </ul>
-
-  <div class="login-or">{% trans 'or' %}</div>
-
-</div>
-
-{% include "socialaccount/snippets/login_extra.html" %}
-
-{% else %}
-<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-{% endif %}
 
 	</div>
-	</div>
+
 {% endblock %}
 

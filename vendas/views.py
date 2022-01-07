@@ -1,6 +1,8 @@
 import datetime
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.views import View
 from .models import Venda, ItemsVenda,  VendaStatus
 from django.db.models import  Sum, F, FloatField,Min, Max, Avg
@@ -10,7 +12,8 @@ import logging
 
 my_log = logging.getLogger('django')
 
-class DashboardView(View):
+
+class DashboardView(LoginRequiredMixin,View):
     def dispatch(self, request, *args, **kwargs):
         if not request.user.has_perm('vendas.ver_dashboard'):
             return HttpResponse('Acesso negado, voce precisa de permissao!')
@@ -80,8 +83,9 @@ class NovoItemPedido(View):
         return render(
             request, 'vendas/novo-pedido.html', data)
 
-class ListaVendas(View):
+class ListaVendas( LoginRequiredMixin, View):
     def get(self, request):
+        LoginRequiredMixin.login_url = ''
         my_log.debug('Acessaram a listagem de vendas: ')
         try:
             1/0

@@ -1,5 +1,5 @@
 
-{% extends "account/base.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 
@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="{% static 'css/register.css' %}">
 {% endblock %}
 
-{% block content %}
+{% block main %}
+ <div class="body-s">
 
 	<div class="main">
 		<input type="checkbox" id="chk" aria-hidden="true">
@@ -19,10 +20,10 @@
 				<form  method="post" action="{% url 'account_signup' %}">
 					  {% csrf_token %}
 						<label for="chk" aria-hidden="true">Registrar conta</label>
-					  	{{ form.username }}
-						{{ form.email }}
-						{{ form.password1 }}
-						{{ form.password2 }}
+
+
+					  	{{ form.as_p }}
+
 					  {% if redirect_field_value %}
 					  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
 					  {% endif %}
@@ -37,5 +38,6 @@
 
 			</div>
 	</div>
+ </div>
 
 {% endblock %}
