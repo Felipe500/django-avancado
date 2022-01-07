@@ -93,3 +93,149 @@ django.db.models.deletion.ProtectedError: ("Cannot delete some instances of mode
 Not Found: /clientes/list/bootstrap-4.6.1/dist/css/bootstrap.min.css
 "GET /clientes/list/bootstrap-4.6.1/dist/css/bootstrap.min.css HTTP/1.1" 404 6897
 Not Found: /favicon.ico
+01/07/2022, 07:47:46---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero
+01/07/2022, 07:48:30---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero
+Not Found: /favicon.ico
+01/07/2022, 08:00:22---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero
+01/07/2022, 08:01:55---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero
+Internal Server Error: /produtos/list/
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/produtos/views.py", line 11, in produtos_list
+    return render(request, 'produtos/produtos_list.html', {'produtos': produtos})
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 211, in render
+    nodelist.append(node.render_annotated(context))
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'persons_update' with arguments '('',)' not found. 1 pattern(s) tried: ['clientes/update/(?P<id>[0-9]+)/$']
+"GET /produtos/list/ HTTP/1.1" 500 187845
+01/07/2022, 08:35:55---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero
+01/07/2022, 08:37:51---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero
+01/07/2022, 08:38:52---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero
+01/07/2022, 08:39:30---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero
+01/07/2022, 08:39:33---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero
+01/07/2022, 08:39:37---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero
+01/07/2022, 08:39:40---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero
+01/07/2022, 08:40:02---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero
+01/07/2022, 08:40:29---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero
+01/07/2022, 08:40:34---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero
+01/07/2022, 08:40:41---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero
+01/07/2022, 08:40:44---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero
+01/07/2022, 08:42:53---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero
+01/07/2022, 08:42:56---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero
+01/07/2022, 08:43:36---felipe
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 87, in get
+    1/0
+ZeroDivisionError: division by zero

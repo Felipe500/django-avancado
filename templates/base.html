@@ -19,16 +19,16 @@
 
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #5e16cf;">
-              <a class="navbar-brand " style="color: white;" href="#">Menu</a>
+              <a class="navbar-brand " style="color: white;" href="{% url 'home' %}">Menu</a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                  <a class="nav-link active" style="color: white;" href="#">Painel <span class="sr-only">(current)</span></a>
-                  <a class="nav-link" style="color: white;" href="#">Produtos</a>
-                  <a class="nav-link" style="color: white;" href="#">Clientes</a>
-                  <a class="nav-link" style="color: white;" href="#">Vendas</a>
+                  <a class="nav-link active" style="color: white;" href="{% url 'dashboard' %}">Painel  <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" style="color: white;" href="{% url 'produto_list' %}">Produtos</a>
+                  <a class="nav-link" style="color: white;" href="{% url 'person_list' %}">Clientes</a>
+                  <a class="nav-link" style="color: white;" href="{% url 'lista-vendas' %}">Vendas</a>
 
 
 
@@ -52,9 +52,15 @@
 
         </nav>
         <hr>
-        <div class="container">
+        {% block extranavbar %}
+        {% endblock %}
+
+
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
             {% block main %}
             {% endblock %}
+            </div>
         </div>
 
         {% block extra %}

@@ -5,41 +5,35 @@
 
 {% block main %}
 
-    <div class="row">
-        <div class="col">
 
-        </div>
+<h3>Listagem de produtos</h3>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Descrição</th>
+        <th scope="col">Preço</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+{% for produto in produtos %}
+  <tbody>
+    <tr>
 
-        <div class="col-6">
-            <h3>Listagem de produtos</h3>
-            <ul class="list-group">
-                {% for produto in produtos %}
-                    <li class="list-group-item">
-                        <a href="{% url 'produto_update' produto.id %}">{{ produto.descricao }}</a>
-                        <a href="{% url 'produto_update' produto.id %}">--> &nbsp;{{ produto.preco }}</a>
-                        <a href="{% url 'Produto_Delete' produto.id %}" class="trash-item">
+      <td><a href="{% url 'produto_update' produto.id %}">{{ produto.id }}</a></td>
+
+      <td><a href="{% url 'produto_update' produto.id %}">{{ produto.descricao|upper }}</a></td>
+        <td><a href="{% url 'produto_update' produto.id %}">{{ produto.preco|upper }}</a></td>
+      <td><a href="{% url 'Produto_Delete' produto.id %}" class="trash-item">
                             <i class="fa fa-trash" aria-hidden="true"></i>
-                        </a>
-                    </li>
+                        </a></td>
+         {% empty %}
+    <li>Desculpe, nao existem clientes cadastrados</li>
+{% endfor %}
+    </tr>
 
-                {% endfor %}
-            </ul>
-
-            <br>
-            <a href="{% url 'Produto_Novo' %}" class="btn btn-primary"> Novo Produto</a>
-        </div>
-
-        <div class="col">
-            {% if user.is_authenticated %}
-                <p>Ola {{user.username }}
-                    <a href="{% url 'logout' %}">
-                        <span class="badge badge-dark">Sair</span>
-                    </a>
-                </p>
-
-            {% endif %}
-        </div>
-    </div>
+  </tbody>
+</table>
 
 
 {% endblock %}
