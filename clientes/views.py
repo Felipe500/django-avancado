@@ -63,7 +63,7 @@ def persons_update(request, id):
 
 @login_required
 def persons_delete(request, id):
-    person = Person.objects.using('postgree').get(id=id)
+    person = Person.objects.using('default').get(id=id)
 
     if request.method == 'POST':
         person.delete(using='default')

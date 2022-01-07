@@ -18,14 +18,18 @@
         <div class="col-sm">
             {% if user.is_authenticated %}
                 <p>Ola {{ user.username }}</p>
-                <a href="{% url 'logout' %}">Sair</a>
+
+                <a href="{% url 'logout' %}" class="btn btn-info">Sair</a>
+                 <hr>
             {% else %}
                 <a href="{% url 'account_login' %}" class="btn btn-info">Entrar</a>
             <hr>
              <a href="{% url 'account_signup' %}" class="btn btn-info">Cadastrar</a>
             {% endif %}
         </div>
+        <hr>
     </div>
+
 
 {% endblock %}
 

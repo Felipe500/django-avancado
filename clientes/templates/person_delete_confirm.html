@@ -5,11 +5,13 @@
 
 {% block main %}
 
-    <h1>Tem certeza que deseja deletar {{ person.first_name }} </h1>
+    <h1>Tem certeza que deseja deletar o cliente {{ person.first_name }} {{ person.last_name }} </h1>
+
 
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <button type="submit" class="btn btn-danger">Delete</button>
+        <a class="btn btn-warning" href="{% url 'person_list' %}" role="button">Cancelar</a>
     </form>
 
 

@@ -23,16 +23,7 @@
 				<form method="POST" action="{% url 'account_login' %}">
 					 {% csrf_token %}
 					<label for="chk" aria-hidden="true">Login</label>
-                        {% if messages %}
-                    {% for message in messages %}
-                      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong>{{message}}</strong>
-                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                      </button>
-                      </div>
-                    {% endfor %}
-                {% endif %}
+
 					{{ form.login }}
 					{{ form.password }}
 					<p style="text-decoration: none;margin: 20px auto;justify-content: center;display: flex;" >{{ form.remember.label }}</p>

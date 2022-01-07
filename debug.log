@@ -74,3 +74,22 @@ Forbidden (CSRF token missing or incorrect.): /accounts/login/
 Not Found: /favicon.ico
 Not Found: /favicon.ico
 Not Found: /favicon.ico
+Internal Server Error: /clientes/delete/2/
+Traceback (most recent call last):
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/clientes/views.py", line 69, in persons_delete
+    person.delete(using='default')
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/db/models/base.py", line 953, in delete
+    collector.collect([self], keep_parents=keep_parents)
+  File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/venv/lib/python3.8/site-packages/django/db/models/deletion.py", line 302, in collect
+    raise ProtectedError(
+django.db.models.deletion.ProtectedError: ("Cannot delete some instances of model 'Person' because they are referenced through protected foreign keys: 'Venda.pessoa'.", {<Venda: 3- venda>})
+"POST /clientes/delete/2/ HTTP/1.1" 500 96535
+Not Found: /clientes/list/bootstrap-4.6.1/dist/css/bootstrap.min.css
+"GET /clientes/list/bootstrap-4.6.1/dist/css/bootstrap.min.css HTTP/1.1" 404 6897
+Not Found: /favicon.ico
