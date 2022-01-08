@@ -419,3 +419,4 @@ Traceback (most recent call last):
   File "/media/the_felipe/SSD ARQUIVOS/Env Django 3/Djnago_avancado/gestao_clientes/vendas/views.py", line 96, in get
     1/0
 ZeroDivisionError: division by zero
+Not Found: /favicon.ico
