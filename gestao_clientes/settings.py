@@ -19,7 +19,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['sistema-django22.herokuapp.com', 'localhost']
 
-ADMINS = [('jose', 'felipejf.ribeiro15@gmail.com'),('felipe', 'felipe.brx.dev@gmail.com')]
+ADMINS = [('felipe', 'felipe.brx.dev@gmail.com')]
 # Application definition
 
 INSTALLED_APPS = [

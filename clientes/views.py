@@ -48,8 +48,8 @@ def persons_new(request):
 
 @login_required
 def persons_update(request, id):
-    #person = get_object_or_404(Person, pk=id)
-    person = Person.objects.using('default').get(id=id)
+    person = get_object_or_404(Person, pk=id)
+    #person = Person.objects.using('default').get(id=id)
     form = PersonForm(request.POST or None, request.FILES or None, instance=person)
 
     if form.is_valid():
