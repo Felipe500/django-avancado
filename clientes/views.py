@@ -41,7 +41,7 @@ def persons_new(request):
 
     if form.is_valid():
         form = form.save(commit=False)
-        form.save(using='default')
+        form.save()
         return redirect('person_list')
     return render(request, 'person_form.html', {'form': form, 'footer_message':footer_message})
 
@@ -54,7 +54,7 @@ def persons_update(request, id):
 
     if form.is_valid():
         form = form.save(commit=False)
-        form.save(using='default')
+        form.save()
 
         return redirect('person_list')
 
@@ -66,7 +66,7 @@ def persons_delete(request, id):
     person = Person.objects.using('default').get(id=id)
 
     if request.method == 'POST':
-        person.delete(using='default')
+        person.delete()
         return redirect('person_list')
 
     return render(request, 'person_delete_confirm.html', {'person': person})

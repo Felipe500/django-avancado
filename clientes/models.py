@@ -49,13 +49,13 @@ class Person(models.Model):
             html_message=html_email,
             fail_silently=False,
         )
-
         message1 = (
             'Subject here', 'Here is the message', 'felipe.brx.dev@gmail.com',
             ['centro.setelinhas@gmail.com', ])
         message2 = ('Another Subject', 'Here is another message', 'felipe.brx.dev@gmail.com',
                     ['felipe.brx.dev@gmail.com', ])
         send_mass_mail([message1, message2], fail_silently=False)
+
     def __str__(self):
         return self.first_name + ' ' + self.last_name
 
