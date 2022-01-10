@@ -40,22 +40,28 @@ class Person(models.Model):
         print("email_4")
         
         print("email_5")
-        mail_admins(
+        try:
+
+            mail_admins(
             'Olá admin tem um novo cliente cadastrado',
             plain_text,
             html_message=html_email,
-            fail_silently=False,
-        )
-        print("email_6")
-        message1 = (
-            'Subject here', 'Here is the message', 'felipe.brx.dev@gmail.com',
-            ['centro.setelinhas@gmail.com', ])
-        print("email_7")
-        message2 = ('Another Subject', 'Here is another message', 'felipe.brx.dev@gmail.com',
-                    ['felipe.brx.dev@gmail.com', ])
-        print("email_8")
-        send_mass_mail([message1, message2], fail_silently=False)
-        print("email_9")
+            fail_silently=False,)
+
+
+            print("email_6")
+            message1 = (
+                'Subject here', 'Here is the message', 'felipe.brx.dev@gmail.com',
+                ['centro.setelinhas@gmail.com', ])
+            print("email_7")
+            message2 = ('Another Subject', 'Here is another message', 'felipe.brx.dev@gmail.com',
+                        ['felipe.brx.dev@gmail.com', ])
+            print("email_8")
+            send_mass_mail([message1, message2], fail_silently=False)
+            print("email_9")
+
+        except:
+            print("Error no servidor de email - smtp")
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name
