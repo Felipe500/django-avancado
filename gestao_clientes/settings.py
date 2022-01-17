@@ -19,7 +19,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['sistema-django22.herokuapp.com', 'localhost']
 
-ADMINS = [('felipe', 'felipe.brx.dev@gmail.com')]
+ADMINS = [('felipe', 'felipe.brx.dev@gmail.com'),]
 # Application definition
 
 INSTALLED_APPS = [
@@ -174,9 +174,12 @@ STATIC_URL = '/static/'
 # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 #EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+#EMAIL_HOST = 'smtp.umbler.com'
+
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 

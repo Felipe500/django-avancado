@@ -86,6 +86,8 @@ class PersonList(LoginRequiredMixin, ListView):
             context['message'] = 'Voce ja acessou hoje'
 
         return context
+
+
 class PersonDetail( DetailView):
     model = Person
 
